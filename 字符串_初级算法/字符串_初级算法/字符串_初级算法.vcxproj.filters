@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2_整数反转.cpp">
+    <ClCompile Include="3_字符串中的第一个唯一字符.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
