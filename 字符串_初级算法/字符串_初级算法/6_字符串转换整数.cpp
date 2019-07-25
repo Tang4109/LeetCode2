@@ -25,9 +25,13 @@ public:
 
 		for ( int i=0;i<len;i++)
 		{
-			if (isdigit(s[i])||(s[i]=='-'))
+			if (isdigit(s[i])||(s[i]=='-')|| (s[i] == '+'))
 			{
 				num++;
+				if (s[i]=='0')
+				{
+					num_0++;
+				}
 			}
 
 			if (  (s[i]==' ') && (num == 0))//出现字母之前全是空格
@@ -41,11 +45,14 @@ public:
 			}
 			if ((num != 0) &&  (i == len - 1))
 			{
-				for (int j = (i - num + 1); j <= i; j++)
+				for (int j = (i - num); j <= i; j++)
 				{
-					
+					if (num==num_0)
+					{
+						return 0;
+					}
 					x += s[j];
-					len_x = num;
+					len_x = num-num_0;
 					if ((x[0] == '-') && (len_x > to_string(INT_MIN).size()))
 					{
 						return INT_MIN;
@@ -84,7 +91,7 @@ public:
 					
 					x += s[j];
 
-					len_x = num;
+					len_x = num-num_0;
 					if ((x[0] == '-') && (len_x > to_string(INT_MIN).size()))
 					{
 						return INT_MIN;
@@ -122,6 +129,7 @@ public:
 private:
 	int len = 0;
 	int num = 0;
+	int num_0 = 0;
 	string x;
 	int len_x = 0;
 };
@@ -130,7 +138,7 @@ private:
 int main()
 {
 	Solution s;
-	string a = "         0000123456789";
+	string a = "-000000000000001";
 	
 	int num;
 	num = s.myAtoi(a);
