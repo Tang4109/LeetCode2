@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="9_最长公共前缀.cpp">
+    <ClCompile Include="7_实现strStr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
