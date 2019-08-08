@@ -32,7 +32,7 @@ int main()
 	location = s.strStr(s1, s2);
 	cout << location << endl;
 	
-	
+	cout << 1 << endl;
 	cout<<"end.."<<endl;
 	system("pause");
 	return 0;
